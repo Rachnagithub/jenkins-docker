@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+ agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
@@ -28,11 +28,5 @@ pipeline {
         sh 'docker push rachnayadav/jenkins-docker-hub'
       }
     }
-  
-  post {
-    always {
-      sh 'docker logout'
-    }
-  }
  }  
 }
