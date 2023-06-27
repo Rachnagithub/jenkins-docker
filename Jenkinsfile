@@ -28,4 +28,9 @@ pipeline {
       sh 'docker logout'
     }
   }
+   stage('create container from image') {
+      steps {
+        sh 'docker run -td --name cont1  rachnayadav/jenkins-docker-hub'
+      }  
+   }
 }
